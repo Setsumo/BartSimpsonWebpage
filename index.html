@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bart Simpson Sentence Writer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #000;
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        ol {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bart Simpson Sentence Creator</h1>
+
+    <input type="text" id="sentence" placeholder="Enter sentence">
+    <input type="number" id="number" min="1" value="1">
+    <button onclick="generateSentences()">Write Sentences</button>
+
+    <ol id="output"></ol>
+
+    <script>
+        function generateSentences() {
+            const sentence = document.getElementById("sentence").value;
+            const number = document.getElementById("number").value;
+            const output = document.getElementById("output");
+
+            output.innerHTML = ""; 
+
+            for (let i = 0; i < number; i++) {
+                const li = document.createElement("li");
+                li.textContent = sentence;
+                output.appendChild(li);
+            }
+        }
+    </script>
+
+</body>
+</html>
+
